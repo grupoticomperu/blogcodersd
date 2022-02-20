@@ -302,22 +302,18 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'OPCIONES DEL POST'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text'       => 'Lista de Posts',
+     
+            'route'        => 'admin.posts.index',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text'       => 'Crear Nuevo Posts',
+            'route'        => 'admin.posts.create',
+            
         ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+       
     ],
 
     /*
@@ -472,5 +468,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

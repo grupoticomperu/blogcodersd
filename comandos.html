@@ -91,3 +91,28 @@ $ composer require laravelcollective/html
 plugin para slug
 ==================================
 jQuery Plugin stringToSlug
+
+
+
+
+==================================
+creando el controller para post
+==================================
+php artisan make:controller Admin/PostController -r
+
+
+==================================
+creando el componente 
+==================================
+php artisan make:livewire Admin/PostsIndex
+
+
+
+
+php artisan migrate:fresh --seed
+
+==================================
+generando el request para controlar los campos
+==================================
+
+php artisan make:request StorePostRequest

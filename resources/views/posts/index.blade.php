@@ -4,6 +4,9 @@
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach ($posts as $post)
                 <article class="w-full bg-center bg-cover h-80 @if($loop->first) md:col-span-2 @endif" style="background-image:url({{ Storage::url($post->image->url)}})">
+                    
+                    {{-- style="background-image:url({{ Storage::url($post->image->url)}})" --}}
+                    
                     {{-- {{ Storage::url($post->image->url)}} --}}
 
 
