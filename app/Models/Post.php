@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $guarded =['id', 'created-at', 'updated_at'];
 
 
     //relacion de uno a muchos inversa
