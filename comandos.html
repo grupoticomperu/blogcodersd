@@ -131,3 +131,28 @@ creando los observer
 ==================================
 
 php artisan make:observer PostObserver --model=Post 
+
+
+==================================
+creando las politicas policis
+==================================
+
+php artisan make:policy PostPolicy 
+
+
+
+==================================
+instalando laravel spatie
+==================================
+
+composer require spatie/laravel-permission
+
+==================================
+publicamos las migraciones
+==================================
+para ver las migraciones en el archivo correspondie
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+creamos las tablas con 
+php artisan migrate
