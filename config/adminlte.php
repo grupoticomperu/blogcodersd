@@ -255,6 +255,11 @@ return [
         ],
         ['header' => 'Administrador'],
         [
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon' => 'fas fa-users fa-fw',
+        ],
+        [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',

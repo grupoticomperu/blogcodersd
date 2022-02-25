@@ -156,3 +156,21 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 
 creamos las tablas con 
 php artisan migrate
+
+
+creando el seeder
+===================
+
+php artisan make:seeder RoleSeeder
+
+==================
+creando controlador para administrar usuarios
+===================
+
+php artisan make:controller Admin\UserController -r
+
+
+==================
+creando el componente de clase
+===================
+php artisan make:livewire Admin\UsersIndex

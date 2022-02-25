@@ -19,9 +19,9 @@ class UserSeeder extends Seeder
             'name'=>'Michael Cabello Alvino',
             'email'=>'michael@ticomperu.com',
             'password'=>bcrypt('12345678')
-        ]);
+        ])->assignRole('Admin');
 
-        User::factory(9)->create();
+        User::factory(99)->create();
 
     }
 }
