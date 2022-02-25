@@ -252,17 +252,20 @@ return [
             'icon'        => 'fas fa-tachometer-alt fa-fw',
             'label'       => 4,
             'label_color' => 'success',
+            'can'   => 'admin.home'
         ],
-        ['header' => 'Administrador'],
+
         [
             'text' => 'Usuarios',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-users fa-fw',
+            'can' => 'admin.users.index'
         ],
         [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
+            'can'  => 'admin.categories.index'
         ],
         [
             'text' => 'change_password',
@@ -310,12 +313,13 @@ return [
         ['header' => 'OPCIONES DEL POST'],
         [
             'text'       => 'Lista de Posts',
-     
             'route'        => 'admin.posts.index',
+            'can'       => 'admin.posts.index'
         ],
         [
             'text'       => 'Crear Nuevo Posts',
             'route'        => 'admin.posts.create',
+            'can'       => 'admin.posts.create'
             
         ],
        
