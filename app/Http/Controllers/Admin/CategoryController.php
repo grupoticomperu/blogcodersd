@@ -14,6 +14,18 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('can:admin.categories.index')->only('index');
+        $this->middleware('can:admin.categories.create')->only('create','store');
+        $this->middleware('can:admin.categories.edit')->only('edit','update');
+        $this->middleware('can:admin.categories.destroy')->only('destroy');
+        
+    }
+
+
+
     public function index()
     {
         $categories = Category::all();
@@ -53,10 +65,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /*
     public function show(Category $category)
     {
         return view('admin.categories.show', compact('category'));
     }
+    */
 
     /**
      * Show the form for editing the specified resource.
