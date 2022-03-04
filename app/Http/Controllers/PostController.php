@@ -28,6 +28,7 @@ class PostController extends Controller
         return view('posts.show', compact('post', 'similares'));
     }
 
+
     public function category(Category $category){
         $posts = Post::where('category_id', $category->id)
                     ->where('status',2)
@@ -35,6 +36,7 @@ class PostController extends Controller
                     ->paginate(4);
         return view('posts.category', compact('posts', 'category'));
     }
+    
 
     public function tag(Tag $tag){
         $posts = $tag->posts()->where('status',2)->latest('id')->paginate(4);
