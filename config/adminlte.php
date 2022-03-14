@@ -226,21 +226,21 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+      /*  [
             'type'         => 'navbar-search',
             'text'         => 'search',
             'topnav_right' => true,
-        ],
+        ],*/
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
-        [
+       /* [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ],*/
         [
             'text' => 'blog',
             'route'  => 'admin.home',
@@ -256,10 +256,17 @@ return [
         ],
 
         [
-            'text' => 'Usuarios',
+            'text' => 'Tiendas',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-users fa-fw',
             'can' => 'admin.users.index'
+        ],
+
+        [
+            'text' => 'Clientes',
+            'route'  => 'admin.clientes.index',
+            'icon' => 'fas fa-users fa-fw',
+            'can' => 'admin.clientes.index'
         ],
         [
             'text' => 'Lista de Roles',
@@ -267,15 +274,15 @@ return [
             'icon' => 'fas fa-users-cog fa-fw',
            /* 'can' => 'admin.users.index'*/
         ],
-        [
+      /*  [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
             'can'  => 'admin.categories.index'
-        ],
+        ],*/
 
  
-        ['header' => 'OPCIONES DEL POST'],
+      /*  ['header' => 'OPCIONES DEL POST'],
         [
             'text'       => 'Lista de Posts',
             'route'        => 'admin.posts.index',
@@ -286,7 +293,7 @@ return [
             'route'        => 'admin.posts.create',
             'can'       => 'admin.posts.create'
             
-        ],
+        ],*/
        
     ],
 

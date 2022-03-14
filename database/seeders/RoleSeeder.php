@@ -17,8 +17,9 @@ class RoleSeeder extends Seeder
     {
         $role1 = Role::create(['name'=>'Admin']);
         $role2 = Role::create(['name'=>'Blogger']);
+        $role3 = Role::create(['name'=>'Tienda']);
 
-        Permission::create(['name'=>'admin.home', 'description'=>'Ver el Dasboard'])->SyncRoles([$role1, $role2]);
+        Permission::create(['name'=>'admin.home', 'description'=>'Ver el Dasboard'])->SyncRoles([$role1, $role2,$role3]);
 
         Permission::create(['name'=>'admin.users.index', 'description'=>'Ver Listado de usuarios'])->SyncRoles([$role1]);
         Permission::create(['name'=>'admin.users.edit', 'description'=>'Editar usuario'])->SyncRoles([$role1]);
@@ -38,6 +39,12 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=>'admin.posts.create', 'description'=>'crear posts'])->SyncRoles([$role1, $role2]);
         Permission::create(['name'=>'admin.posts.edit', 'description'=>'editar posts'])->SyncRoles([$role1, $role2]);
         Permission::create(['name'=>'admin.posts.destroy', 'description'=>'eliminar posts'])->SyncRoles([$role1, $role2]);
+
+        Permission::create(['name'=>'admin.clientes.index', 'description'=>'listar clientes'])->SyncRoles([$role1, $role2, $role3]);
+        Permission::create(['name'=>'admin.clientes.create', 'description'=>'crear clientes'])->SyncRoles([$role1, $role2]);
+        Permission::create(['name'=>'admin.clientes.edit', 'description'=>'editar clientes'])->SyncRoles([$role1, $role2]);
+        Permission::create(['name'=>'admin.clientes.destroy', 'description'=>'eliminar clientes'])->SyncRoles([$role1, $role2]);
+
 
 
     }

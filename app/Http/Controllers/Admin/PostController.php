@@ -25,11 +25,7 @@ class PostController extends Controller
         
     }
 
-
-
-
-
-
+  
     public function index()
     {
         return view('admin.posts.index');
@@ -80,7 +76,6 @@ class PostController extends Controller
         return view('admin.posts.show', compact('post'));
     }
     */
-
 
     public function edit(Post $post)
     {

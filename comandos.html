@@ -48,6 +48,7 @@ generando el seeder para usuarios y poner una credencial
 php artisan make:seeder UserSeeder
 
 php artisan make:seeder PostSeeder
+php artisan make:seeder ZonaSeeder
 
 =========================================================
 ejecutand el seeder
@@ -96,16 +97,17 @@ jQuery Plugin stringToSlug
 
 
 ==================================
-creando el controller para post
+creando el controller para post y clientes
 ==================================
 php artisan make:controller Admin/PostController -r
+php artisan make:controller Admin/ClienteController -r
 
 
 ==================================
 creando el componente 
 ==================================
 php artisan make:livewire Admin/PostsIndex
-
+php artisan make:livewire Admin/ClientesIndex
 
 
 
@@ -116,6 +118,7 @@ generando el request para controlar los campos
 ==================================
 
 php artisan make:request StorePostRequest
+php artisan make:request StoreClienteRequest
 
 
 
@@ -138,7 +141,7 @@ creando las politicas policis
 ==================================
 
 php artisan make:policy PostPolicy 
-
+php artisan make:policy ClientePolicy 
 
 
 ==================================
