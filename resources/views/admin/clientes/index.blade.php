@@ -35,9 +35,25 @@
                         <td>{{ $cliente->nombres}}</td>
                         <td>{{ $cliente->dni }}</td>
                         <td>
-                        
-                            <a href="{{ route('admin.clientes.edit', $cliente)}}" class="btn btn-xs btn-info"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="" class="btn btn-xs btn-danger"><i class="fas fa-times-circle"></i></a>
+                            @can('admin.clientes.show')
+                              <a href="{{ route('admin.clientes.show', $cliente)}}" class="btn btn-xs btn-info"><i class="fas fa-eye"></i></a>
+                            @endcan
+                          
+                            @can('admin.clientes.edit')
+                              <a href="{{ route('admin.clientes.edit', $cliente)}}" class="btn btn-xs btn-info"><i class="fas fa-pencil-alt"></i></a>
+                            @endcan
+
+                            @can('admin.clientes.destroy')
+                              <form action="{{route('admin.clientes.destroy', $cliente)}}" method="POST">
+                                  @csrf
+                                  @method('delete')
+                                  <button type="submit" class="btn btn-danger btn-xs"><i class="fas fa-times-circle"></i></button>
+                              </form>                             
+                            @endcan
+
+
+
+                            
 
 
 

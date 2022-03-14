@@ -3,21 +3,12 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\Cliente;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Spatie\Permission\Models\Role;
 
-
-class ClientePolicy
+class RolePolicy
 {
     use HandlesAuthorization;
-
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-
-
 
     public function before($user)
     {
@@ -28,18 +19,15 @@ class ClientePolicy
     }
 
 
-
-    public function misclientes(User $user, Cliente $cliente)
+    public function misroles(User $user, Role $role)
     {
-        if($user->id == $cliente->user_id){
+        if($user->hasRole('Admin') )
+        {
             return true;
         }else{
             return false;
         }
         //
     }     
-
-
-     
 
 }

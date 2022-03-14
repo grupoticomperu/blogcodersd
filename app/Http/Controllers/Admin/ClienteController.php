@@ -17,6 +17,7 @@ class ClienteController extends Controller
     {
         $this->middleware('can:admin.clientes.index')->only('index');
         $this->middleware('can:admin.clientes.create')->only('create','store');
+        $this->middleware('can:admin.clientes.show')->only('show');
         $this->middleware('can:admin.clientes.edit')->only('edit','update');
         $this->middleware('can:admin.clientes.destroy')->only('destroy');
         
@@ -30,11 +31,22 @@ class ClienteController extends Controller
     {
 
         //if(auth()->user()->id == 1 or auth()->user()->id == 2) {
-        if(auth()->user()->id == 1) {    
+     /*   if(auth()->user()->id == 1) {    
             $clientes = Cliente::all();
         }else{
             $clientes = Cliente::where('user_id', auth()->user()->id)->get();
+        }*/
+
+        if( auth()->user()->hasRole('Admin') )
+        {
+            $clientes = Cliente::all();
+            
         }
+        else
+        {
+            $clientes = auth()->user()->clientes;
+         }
+
    
         return view('admin.clientes.index', compact('clientes'));
     }
@@ -90,16 +102,17 @@ class ClienteController extends Controller
     }
 
   
-    public function show($id)
+    public function show(Cliente $cliente)
     {
-        //
+        $this->authorize('misclientes', $cliente);
+        return view('admin.clientes.show', compact('cliente'));
     }
 
   
     public function edit(Cliente $cliente)
     {
 
-
+        $this->authorize('misclientes', $cliente);
         //$this->authorize('update', $post);
        // $this->authorize('view', $post);
 
@@ -120,7 +133,7 @@ class ClienteController extends Controller
 
     public function update(Cliente $cliente, StoreClienteRequest $request)
     {
-       
+        $this->authorize('misclientes', $cliente);
        //$cliente = Cliente::findorFail($cliente->id);
 
        $cliente->nombres = $request->get('nombres');
@@ -158,7 +171,7 @@ class ClienteController extends Controller
     public function destroy(Cliente $cliente)
     {
        // $this->authorize('author', $post);
-        
+       $this->authorize('misclientes', $cliente);
         $cliente->delete();
         return redirect()->route('admin.clientes.index')->with('info', 'El Cliente se elimino con exito');
     }

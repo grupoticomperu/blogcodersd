@@ -42,8 +42,15 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name'=>'admin.clientes.index', 'description'=>'listar clientes'])->SyncRoles([$role1, $role2, $role3]);
         Permission::create(['name'=>'admin.clientes.create', 'description'=>'crear clientes'])->SyncRoles([$role1, $role2]);
+        Permission::create(['name'=>'admin.clientes.show', 'description'=>'ver clientes'])->SyncRoles([$role1, $role2, $role3]);
         Permission::create(['name'=>'admin.clientes.edit', 'description'=>'editar clientes'])->SyncRoles([$role1, $role2]);
         Permission::create(['name'=>'admin.clientes.destroy', 'description'=>'eliminar clientes'])->SyncRoles([$role1, $role2]);
+
+
+        Permission::create(['name'=>'admin.roles.index', 'description'=>'listar roles'])->SyncRoles([$role1]);
+        Permission::create(['name'=>'admin.roles.create', 'description'=>'crear roles'])->SyncRoles([$role1]);
+        Permission::create(['name'=>'admin.roles.edit', 'description'=>'editar roles'])->SyncRoles([$role1]);
+        Permission::create(['name'=>'admin.roles.destroy', 'description'=>'eliminar roles'])->SyncRoles([$role1]);
 
 
 
